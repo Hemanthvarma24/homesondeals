@@ -1,67 +1,47 @@
 "use client"
 
-import { useState } from "react"
-import Image from "next/image"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import homebg from"@/assets/homebg.jpg"
 
-export default function PropertyTypes() {
-  const [currentSlide, setCurrentSlide] = useState(0)
-
-  const propertyTypes = [
-    {
-      id: 1,
-      title: "Commercial",
-      description: "OFFICE/RETAIL/SHOP/GODOWN/INDUSTRIAL/LAND/FACTORY",
-      image: "/placeholder.svg?height=400&width=300",
-    },
-    {
-      id: 2,
-      title: "Residential Apartments",
-      description: "Luxury living spaces",
-      image: "/placeholder.svg?height=400&width=300",
-    },
-  ]
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % propertyTypes.length)
-  }
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + propertyTypes.length) % propertyTypes.length)
-  }
-
+export default function PropertyType() {
   return (
-    <section className="py-12 bg-navy-800 text-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2">Explore by</h2>
-        <h3 className="text-xl md:text-2xl font-bold mb-8">Property Type</h3>
+    <section className="mx-10 py-12 mt-10 bg-[#15284F]"> {/* Dark navy background */}
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6">
+        
+        {/* Left Section - Title, Description, and Buttons */}
+        <div className="w-full md:w-1/2 text-white">
+          <h2 className="text-2xl md:text-3xl font-bold">Explore by <br /> Property Type</h2>
+          <p className="text-gray-300 mt-2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-          <div className="space-y-4">
-            <h4 className="text-xl font-bold">{propertyTypes[currentSlide].title}</h4>
-            <p className="text-sm">{propertyTypes[currentSlide].description}</p>
-
-            <div className="flex space-x-2 pt-4">
-              <button onClick={prevSlide} className="bg-white/20 rounded-full p-2">
-                <ChevronLeft className="h-5 w-5" />
-              </button>
-              <button onClick={nextSlide} className="bg-white/20 rounded-full p-2">
-                <ChevronRight className="h-5 w-5" />
-              </button>
-            </div>
-          </div>
-
-          <div className="relative h-64 md:h-80">
-            <Image
-              src={propertyTypes[currentSlide].image || "/placeholder.svg"}
-              alt={propertyTypes[currentSlide].title}
-              fill
-              className="object-cover rounded-lg"
-            />
+          {/* Navigation Buttons */}
+          <div className="flex space-x-4 mt-6">
+            <button className="h-12 w-12 flex items-center justify-center bg-gray-300 rounded-full shadow-md hover:bg-gray-400">
+              <ChevronLeft className="h-6 w-6 text-black" />
+            </button>
+            <button className="h-12 w-12 flex items-center justify-center bg-gray-300 rounded-full shadow-md hover:bg-gray-400">
+              <ChevronRight className="h-6 w-6 text-black" />
+            </button>
           </div>
         </div>
+
+        {/* Right Section - Image */}
+        <div className="w-full md:w-1/2 flex justify-center mt-6 md:mt-0">
+          <div className="relative w-72 h-72">
+            <img
+              src={homebg} // Replace with your image
+              alt="Residential Apartments"
+              className="w-full h-full object-cover rounded-lg shadow-lg"
+            />
+            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 rounded-lg">
+              <h3 className="text-white text-lg font-bold">Residential Apartments</h3>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
-  )
+  );
 }
-
