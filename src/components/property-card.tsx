@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import homebg from "@/assets/homebg.jpg"
 
 interface PropertyCardProps {
   property: {
@@ -16,7 +17,7 @@ export default function PropertyCard({ property }: PropertyCardProps) {
   return (
     <div className="bg-navy-800 rounded-lg overflow-hidden text-white">
       <div className="relative h-48 md:h-64">
-        <Image src={property.image || "/placeholder.svg"} alt={property.location} fill className="object-cover" />
+        <Image src={homebg || "/placeholder.svg"} alt={property.location} fill className="object-cover" />
       </div>
       <div className="p-4">
         <p className="text-sm font-medium">{property.location}</p>

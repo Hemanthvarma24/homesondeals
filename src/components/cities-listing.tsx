@@ -1,14 +1,15 @@
 import Image from "next/image"
 import Link from "next/link"
+import homebg from "@/assets/homebg.jpg"
 
 export default function CitiesListing() {
   const cities = [
-    { id: 1, name: "India", image: "/placeholder.svg?height=200&width=300" },
-    { id: 2, name: "New York", image: "/placeholder.svg?height=200&width=300" },
-    { id: 3, name: "Canada", image: "/placeholder.svg?height=200&width=300" },
-    { id: 4, name: "India", image: "/placeholder.svg?height=200&width=300" },
-    { id: 5, name: "New York", image: "/placeholder.svg?height=200&width=300" },
-    { id: 6, name: "Canada", image: "/placeholder.svg?height=200&width=300" },
+    { id: 1, name: "India", image: homebg },
+    { id: 2, name: "New York", image: homebg },
+    { id: 3, name: "Canada", image: homebg },
+    { id: 4, name: "India", image: homebg },
+    { id: 5, name: "New York", image: homebg },
+    { id: 6, name: "Canada", image: homebg },
   ]
 
   return (

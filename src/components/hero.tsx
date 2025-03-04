@@ -1,26 +1,27 @@
 "use client"
 
 import { useState } from "react"
-import { Search } from "lucide-react"
+import { Search, ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import Image from "next/image"
+import back from "@/assets/homebg.jpg"
 
 export default function Hero() {
   const [searchQuery, setSearchQuery] = useState("")
 
   return (
-    <section className="relative h-[500px] md:h-[600px] w-full">
+    <section className="relative h-[500px] md:h-[600px] w-full overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <div
-          className="w-full h-full bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/placeholder.svg?height=600&width=1200')",
-            backgroundPosition: "center",
-          }}
-        >
-          <div className="absolute inset-0 bg-black/40"></div>
-        </div>
+        <Image
+          src={back} // Replace with actual image path
+          alt="Hero Background"
+          layout="fill"
+          objectFit="cover"
+          priority
+        />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
       {/* Content */}
@@ -30,7 +31,7 @@ export default function Hero() {
         </h1>
 
         {/* Search Bar */}
-        <div className="bg-white rounded-md flex items-center p-2 max-w-xl">
+        <div className="bg-white rounded-md flex items-center p-2 w-xl/2 translate-y-24">
           <Search className="h-5 w-5 text-gray-400 ml-2" />
           <input
             type="text"
@@ -53,4 +54,3 @@ export default function Hero() {
     </section>
   )
 }
-
