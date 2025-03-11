@@ -8,15 +8,6 @@ export default function Partners() {
         <p className="text-gray-600 max-w-2xl mx-auto">
           Every day, we build trust through communication, transparency, and results.
         </p>
-
-        {/* Partner logos would go here */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
-          {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="h-16 bg-gray-200 rounded-md flex items-center justify-center">
-              <span className="text-gray-500 font-medium">Partner {i}</span>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   )

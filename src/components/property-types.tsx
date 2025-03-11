@@ -2,6 +2,7 @@
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import homebg from"@/assets/homebg.jpg"
+import Image from "next/image";
 
 export default function PropertyType() {
   return (
@@ -30,12 +31,11 @@ export default function PropertyType() {
         {/* Right Section - Image */}
         <div className="w-full md:w-1/2 flex justify-center mt-6 md:mt-0">
           <div className="relative w-72 h-72">
-            <img
-              src={homebg} // Replace with your image
+            <Image src={homebg} // Replace with your image
               alt="Residential Apartments"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
+              className="w-full h-full object-fit rounded-lg shadow-lg"
             />
-            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 rounded-lg">
+            <div className="absolute inset-0 flex items-center justify-center rounded-lg">
               <h3 className="text-white text-lg font-bold">Residential Apartments</h3>
             </div>
           </div>
