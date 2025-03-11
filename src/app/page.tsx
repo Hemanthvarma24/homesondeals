@@ -5,6 +5,9 @@ import CitiesListing from "@/components/cities-listing"
 import PropertyTypes from "@/components/property-types"
 import Services from "@/components/services"
 import Partners from "@/components/partners"
+import { TestimonialSection } from "@/components/testimonial-section"
+import Faq from "@/components/faq"
+import Footer from"@/components/footer"
 
 export default function Home() {
   return (
@@ -16,6 +19,9 @@ export default function Home() {
       <PropertyTypes />
       <Services />
       <Partners />
+      <TestimonialSection/>
+      <Faq/>
+      <Footer/>
     </main>
   )
 }

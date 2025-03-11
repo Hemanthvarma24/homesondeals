@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import homesbg from"@/assets/homebg.jpg"
 
 export default function Services() {
   const services = [
@@ -34,7 +35,7 @@ export default function Services() {
               <div className="relative rounded-lg overflow-hidden border border-gray-200 group">
                 <div className="h-64 md:h-80 relative">
                   <Image
-                    src={service.image || "/placeholder.svg"}
+                    src={homesbg}
                     alt={service.title}
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
