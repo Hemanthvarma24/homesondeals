@@ -1,3 +1,4 @@
+
 import Hero from "@/components/hero"
 import BhkOptions from "@/components/bhk-options"
 import FeaturedProperties from "@/components/featured-properties"
@@ -11,7 +12,7 @@ import Footer from"@/components/footer"
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen overflow-x-hidden w-full">
       <Hero />
       <BhkOptions />
       <FeaturedProperties />
@@ -23,6 +24,5 @@ export default function Home() {
       <Faq/>
       <Footer/>
     </main>
-  )
+  );
 }
-
