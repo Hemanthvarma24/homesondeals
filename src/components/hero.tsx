@@ -38,11 +38,11 @@ export default function HeroHeader() {
           <Link href="/" className="text-2xl font-bold">Logo</Link>
           <div className="flex items-center font-bold space-x-4">
             <nav className="hidden md:flex items-center space-x-6">
-              <Link href="/" className="hover:text-gray-300">Home</Link>
-              <Link href="/about" className="hover:text-gray-300">About Us</Link>
-              <Link href="/listing" className="hover:text-gray-300">Listing</Link>
-              <Link href="/blog" className="hover:text-gray-300">Blog</Link>
-              <Link href="/contact" className="hover:text-gray-300">Contact</Link>
+              <Link href="/" className="hover:text-[#145efc]">Home</Link>
+              <Link href="/about" className="hover:text-[#145efc]">About Us</Link>
+              <Link href="/listing" className="hover:text-[#145efc]">Listing</Link>
+              <Link href="/blog" className="hover:text-[#145efc]">Blog</Link>
+              <Link href="/contact" className="hover:text-[#145efc]">Contact</Link>
             </nav>
             <div className="relative" ref={dropdownRef}>
               <button onClick={() => setIsDropdownOpen(!isDropdownOpen)} className="p-2">
@@ -86,7 +86,7 @@ export default function HeroHeader() {
             type="text"
             placeholder="Search by Locality, Builder or a project"
             className="flex-1 p-2 outline-none text-gray-700"
-            value={searchQuery}
+            value={searchQuery} 
             onChange={(e) => setSearchQuery(e.target.value)}
           />
           <Button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full">Buy Now</Button>

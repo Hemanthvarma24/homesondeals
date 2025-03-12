@@ -4,25 +4,37 @@ import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { useState } from "react"
 import  homebg  from"@/assets/homebg.jpg"
+import professional from"@/assets/professional.jpg"
 
-interface Testimonial {
-  id: number
-  name: string
-  image: string
-  quote: string
-  role: string
-}
+import { StaticImageData } from "next/image";
+
+type Testimonial = {
+  id: number;
+  name: string;
+  image: string | StaticImageData; // Allow both string URLs and imported images
+  quote: string;
+};
 
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "k.p. Harikrishna",
-    image: "/placeholder.svg?height=96&width=96",
+    name: "K.P. Harikrishna",
+    image: professional, // Use a string URL instead
     quote: "Discover the Symphony Within You with our Exceptional Instruments",
-    role: "Satisfied Customer",
   },
-  // Add more testimonials as needed
-]
+  {
+    id: 2,
+    name: "IBRAHIM",
+    image: homebg,
+    quote: "Discover the Symphony Within You with our Exceptional Instruments",
+  },
+  {
+    id: 3,
+    name: "SABARI",
+    image: professional,
+    quote: "Discover the Symphony Within You with our Exceptional Instruments",
+  },
+];
 
 export function TestimonialSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -52,13 +64,8 @@ export function TestimonialSection() {
         {/* Header */}
         <div className="text-center text-white mb-20">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Hundreds of Partners
             <br />
-            Around the World
           </h2>
-          <p className="text-xl text-gray-200">
-            Every day, we build trust through communication, transparency, and results.
-          </p>
         </div>
 
         {/* Testimonials */}
@@ -101,8 +108,6 @@ export function TestimonialSection() {
               <p className="text-xl text-gray-200 italic max-w-2xl mx-auto mb-4">
                 "{testimonials[currentIndex].quote}"
               </p>
-
-              <p className="text-gray-300">{testimonials[currentIndex].role}</p>
             </div>
           </div>
         </div>
