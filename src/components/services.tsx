@@ -1,55 +1,59 @@
-import Image from "next/image"
-import Link from "next/link"
-import homesbg from"@/assets/homebg.jpg"
+"use client";
 
-export default function Services() {
-  const services = [
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import Image01 from "@/assets/family.jpg";
+import Image02 from "@/assets/villa.jpg";
+import Image03 from "@/assets/building.jpg";
+
+export default function PropertyOptions() {
+  const options = [
     {
-      id: 1,
       title: "Buy a Property",
-      image: "/placeholder.svg?height=300&width=200",
-      link: "/buy",
+      image: Image01, // building011
     },
     {
-      id: 2,
       title: "Sell a Property",
-      image: "/placeholder.svg?height=300&width=200",
-      link: "/sell",
+      image: Image02, // building
     },
     {
-      id: 3,
       title: "Rent a Property",
-      image: "/placeholder.svg?height=300&width=200",
-      link: "/rent",
+      image: Image03, // family
     },
-  ]
+  ];
 
   return (
-    <section className="py-12 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">What we Doing?</h2>
+    <section className="px-4 py-8 text-center">
+      {/* Heading */}
+      <h2 className="text-2xl md:text-3xl font-bold mb-8">What we doing</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {services.map((service) => (
-            <Link href={service.link} key={service.id}>
-              <div className="relative rounded-lg overflow-hidden border border-gray-200 group">
-                <div className="h-64 md:h-80 relative">
-                  <Image
-                    src={homesbg}
-                    alt={service.title}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 bg-white p-4 text-center">
-                  <h3 className="text-lg font-medium">{service.title}</h3>
-                </div>
+      {/* Property Options */}
+      <div className="flex justify-center items-center gap-14">
+        {options.map((option, index) => (
+          <div
+            key={index}
+            className="relative w-[280px] sm:w-[320px] md:w-[350px] h-[450px] rounded-2xl shadow-lg border border-gray-300"
+          >
+            <Image
+              src={option.image}
+              alt={option.title}
+              layout="fill"
+              objectFit="cover"
+              className="rounded-2xl"
+            />
+
+            {/* Button-like Text Box (Half inside, half outside) */}
+            <div className="absolute left-4 right-4 top-[26rem] bg-white opacity-80 text-black flex justify-between items-center px-4 py-5 rounded-xl shadow-lg hover:bg-[#1b4db3] hover:text-white transition cursor point">
+              <span className="text-lg sm:text-2xl font-extrabold">{option.title}</span>
+              
+              {/* Circle Around Arrow */}
+              <div className=" text-black hover:text-white w-10 h-10 flex items-center justify-center bg-gray-300 rounded-full shadow-md hover:bg-gray-500 transition">
+                <ArrowRight className="w-5 h-5" />
               </div>
-            </Link>
-          ))}
-        </div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
-  )
+  );
 }
-

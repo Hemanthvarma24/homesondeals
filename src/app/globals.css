@@ -127,3 +127,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes slide-shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.animate-slide-shine {
+  transform: rotate(-50deg);
+  animation: slide-shine 1.5s infinite linear;
+}

@@ -1,15 +1,20 @@
 import Image from "next/image"
 import Link from "next/link"
-import homebg from "@/assets/homebg.jpg"
+import Place from "@/assets/india.jpg"
+import Place1 from "@/assets/new york.jpg"
+import Place2 from "@/assets/canada.avif"
+import Place3 from "@/assets/india.jpg"
+import Place4 from "@/assets/new york.jpg"
+import Place5 from "@/assets/canada.avif"
 
 export default function CitiesListing() {
   const cities = [
-    { id: 1, name: "India", image: homebg },
-    { id: 2, name: "New York", image: homebg },
-    { id: 3, name: "Canada", image: homebg },
-    { id: 4, name: "India", image: homebg },
-    { id: 5, name: "New York", image: homebg },
-    { id: 6, name: "Canada", image: homebg },
+    { id: 1, name: "India", image: Place },
+    { id: 2, name: "New York", image: Place1 },
+    { id: 3, name: "Canada", image: Place2 },
+    { id: 4, name: "India", image: Place3 },
+    { id: 5, name: "New York", image: Place4 },
+    { id: 6, name: "Canada", image: Place5 },
   ]
 
   return (
