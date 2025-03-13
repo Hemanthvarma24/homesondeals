@@ -1,52 +1,48 @@
 "use client"
 
 import { useState } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image"
+
+import ViolinImg1 from "@/assets/imagebg.jpeg"
+import ViolinImg2 from "@/assets/imagebg01.jpeg"
+import ViolinImg3 from "@/assets/imagebg02.webp"
+import ViolinImg4 from "@/assets/building.jpg"
 
 export default function FeaturedProperties() {
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const properties = [
     {
-      id: 1,
-      title: "Kadence, Vivaldi 4/4 Violin",
-      subtitle: "With",
+      id: 2,
+      title: "Kadence, Vivaldi 4/4 Violin with",
       description: "Bow, Rosin, Hard Case",
       model: "(Brown Glossy V001C)",
-      priceRange: "75 – 95",
-      unit: "lk",
-      image: "/placeholder.svg?height=400&width=400",
+      priceRange: "75 – 95 lk",
+      image: ViolinImg1,
     },
     {
       id: 2,
-      title: "Kadence, Vivaldi 4/4 Violin",
-      subtitle: "With",
+      title: "Kadence, Vivaldi 4/4 Violin with",
       description: "Bow, Rosin, Hard Case",
       model: "(Brown Glossy V001C)",
-      priceRange: "75 – 95",
-      unit: "lk",
-      image: "/placeholder.svg?height=400&width=400",
+      priceRange: "75 – 95 lk",
+      image: ViolinImg2,
     },
     {
-      id: 3,
-      title: "Kadence, Vivaldi 4/4 Violin",
-      subtitle: "With",
+      id: 2,
+      title: "Kadence, Vivaldi 4/4 Violin with",
       description: "Bow, Rosin, Hard Case",
       model: "(Brown Glossy V001C)",
-      priceRange: "75 – 95",
-      unit: "lk",
-      image: "/placeholder.svg?height=400&width=400",
+      priceRange: "75 – 95 lk",
+      image: ViolinImg3,
     },
     {
-      id: 4,
-      title: "Kadence, Vivaldi 4/4 Violin",
-      subtitle: "With",
+      id: 2,
+      title: "Kadence, Vivaldi 4/4 Violin with",
       description: "Bow, Rosin, Hard Case",
       model: "(Brown Glossy V001C)",
-      priceRange: "75 – 95",
-      unit: "lk",
-      image: "/placeholder.svg?height=400&width=400",
+      priceRange: "75 – 95 lk",
+      image: ViolinImg4,
     },
   ]
 
@@ -72,12 +68,12 @@ export default function FeaturedProperties() {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Featured Properties for Sales</h2>
 
         <div className="relative flex justify-center items-center w-full max-w-4xl">
-      
+          
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-center items-center">
             {visibleProperties.map((property) => (
               <div key={property.id} className="relative overflow-hidden rounded-lg w-[450px] h-[300px] bg-[#1a2e4c] flex items-center justify-center">
                 <Image
-                  src={property.image || "/placeholder.svg"}
+                  src={property.image}
                   alt={property.title}
                   fill
                   className="object-cover opacity-40"
@@ -91,16 +87,13 @@ export default function FeaturedProperties() {
                     <p className="text-4xl font-bold">{property.priceRange}</p>
                     <p className="text-2xl font-bold mb-4">{property.unit}</p>
                   </div>
-                  <button className="absolute bottom-1 right-4 bg-white text-[#1a4db2] font-bold py-2 px-6 rounded-sm text-xl">
-  Buy Now
-</button>
-
+                  <button className="absolute bottom-7 bg-white text-[#1a4db2] font-bold py-2 px-6 rounded-sm text-xl">
+                    Buy Now
+                  </button>
                 </div>
               </div>
             ))}
           </div>
-
-          
         </div>
       </div>
     </section>

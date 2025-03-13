@@ -1,22 +1,22 @@
-"use client"
+"use client";
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { Menu, User, Search } from "lucide-react";
+import { Menu, User, Search, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import back from "@/assets/homebg.jpg";
+import back from "@/assets/building011.jpg";
 
 export default function HeroHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const dropdownRef = useRef(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   // Close dropdown when clicking outside
   useEffect(() => {
-    function handleClickOutside(event) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsDropdownOpen(false);
       }
     }
@@ -43,24 +43,43 @@ export default function HeroHeader() {
               <Link href="/listing" className="hover:text-[#145efc]">Listing</Link>
               <Link href="/blog" className="hover:text-[#145efc]">Blog</Link>
               <Link href="/contact" className="hover:text-[#145efc]">Contact</Link>
+
+              {/* Post Property Button with Shine Effect */}
+              <button className="cursor-pointer relative flex items-center bg-white px-4 py-1 rounded-lg shadow-md border border-gray-300 hover:bg-gray-100 transition">
+                <span className="text-black text-sm font-semibold">Post property</span>
+                <div className="relative ml-2 px-1 py-0 bg-green-600 text-white text-xs font-bold rounded overflow-hidden">
+                  FREE
+                  <span className="absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-white/10 to-white/50 opacity-90 animate-slide-shine"></span>
+                </div>
+              </button>
             </nav>
-            <div className="relative" ref={dropdownRef}>
-              <button onClick={() => setIsDropdownOpen(!isDropdownOpen)} className="p-2">
+
+            {/* User Dropdown (Opens on Hover) */}
+            <div
+              className="relative"
+              ref={dropdownRef}
+              onMouseEnter={() => setIsDropdownOpen(true)}
+              onMouseLeave={() => setIsDropdownOpen(false)}
+            >
+              <button className="p-2">
                 <User className="h-6 w-6" />
               </button>
               {isDropdownOpen && (
-                <div className="absolute right-0 mt-4 w-48 bg-white text-black shadow-lg rounded-lg py-2">
+                <div className="absolute right-0 mx-auto px-4 bg-white text-black shadow-lg rounded-lg py-2">
                   <Link href="/profile" className="block px-4 py-2 hover:bg-gray-100">Profile</Link>
                   <Link href="/settings" className="block px-4 py-2 hover:bg-gray-100">Settings</Link>
                   <button className="block w-full text-left px-4 py-2 hover:bg-gray-100">Logout</button>
                 </div>
               )}
             </div>
+
+            {/* Mobile Menu */}
             <button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               <Menu className="h-6 w-6" />
             </button>
           </div>
         </div>
+
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden absolute right-0 top-full w-48 bg-white text-black shadow-md py-3 rounded-lg">

@@ -1,5 +1,6 @@
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./ui/accordion";
 import Image from "next/image";
+import backimg from "@/assets/building.jpg";
 
 export default function Faq() {
     return (
@@ -14,15 +15,14 @@ export default function Faq() {
                         </p>
 
                         <Accordion type="single" collapsible className="w-full">
-                            {[
-                                "What are the costs to buy a house?",
+                            {["What are the costs to buy a house?",
                                 "How can I get a mortgage?",
                                 "What should I consider before buying a home?",
                                 "Are there additional hidden costs?",
                             ].map((question, index) => (
                                 <AccordionItem key={index} value={`item-${index}`}>
-                                    <AccordionTrigger className="text-left">
-                                        {index + 1}. {question}
+                                    <AccordionTrigger className="text-left no-underline hover:no-underline focus:no-underline">
+                                         {question}
                                     </AccordionTrigger>
                                     <AccordionContent>
                                         The costs of buying a house typically include the down payment, closing costs, inspection fees,
@@ -35,7 +35,7 @@ export default function Faq() {
 
                     <div>
                         <Image
-                            src="/placeholder.svg?height=500&width=600"
+                            src={backimg}
                             alt="House with pool"
                             width={600}
                             height={500}

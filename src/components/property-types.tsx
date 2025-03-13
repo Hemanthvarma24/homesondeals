@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import homebg from"@/assets/homebg.jpg"
 import Image from "next/image";
+import Villa from "@/assets/structure building.avif";
 
 export default function PropertyType() {
   return (
-    <section className="mx-10 py-12 mt-10 bg-[#15284F]"> {/* Dark navy background */}
+    <section className="rounded-md mx-10 px-20 py-12 mt-10 bg-[#15284F]"> {/* Dark navy background */}
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6">
         
         {/* Left Section - Title, Description, and Buttons */}
@@ -30,13 +30,16 @@ export default function PropertyType() {
 
         {/* Right Section - Image */}
         <div className="w-full md:w-1/2 flex justify-center mt-6 md:mt-0">
-          <div className="relative w-72 h-72">
-            <Image src={homebg} // Replace with your image
+          <div className="relative w-100 h-72">
+            <Image 
+              src={Villa} // Replace with your image
               alt="Residential Apartments"
-              className="w-full h-full object-fit rounded-lg shadow-lg"
+              className="w-full h-full object-cover rounded-lg shadow-lg bg-white opacity-70"
             />
-            <div className="absolute inset-0 flex items-center justify-center rounded-lg">
-              <h3 className="text-white text-lg font-bold">Residential Apartments</h3>
+            <div className="absolute inset-0 flex flex-col items-center justify-center rounded-lg">
+              {/* Stacking Text Vertically */}
+              <h3 className="text-black text-3xl font-bold">Residential</h3>
+              <h3 className="text-[#1b4db3] text-3xl font-bold mt-1 text-shadow-black">Apartments</h3>
             </div>
           </div>
         </div>
