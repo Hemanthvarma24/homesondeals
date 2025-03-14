@@ -38,11 +38,11 @@ export default function HeroHeader() {
           <Link href="/" className="text-2xl font-bold">Logo</Link>
           <div className="flex items-center font-bold space-x-4">
             <nav className="hidden md:flex items-center space-x-6">
-              <Link href="/" className="hover:text-[#145efc]">Home</Link>
-              <Link href="/about" className="hover:text-[#145efc]">About Us</Link>
-              <Link href="/listing" className="hover:text-[#145efc]">Listing</Link>
-              <Link href="/blog" className="hover:text-[#145efc]">Blog</Link>
-              <Link href="/contact" className="hover:text-[#145efc]">Contact</Link>
+              <Link href="/" className="hover:text-[#344680]">Home</Link>
+              <Link href="/about" className="hover:text-[#344680]">About Us</Link>
+              <Link href="/listing" className="hover:text-[#344680]">Listing</Link>
+              <Link href="/blog" className="hover:text-[#344680]">Blog</Link>
+              <Link href="/contact" className="hover:text-[#344680]">Contact</Link>
 
               {/* Post Property Button with Shine Effect */}
               <button className="cursor-pointer relative flex items-center bg-white px-4 py-1 rounded-lg shadow-md border border-gray-300 hover:bg-gray-100 transition">
