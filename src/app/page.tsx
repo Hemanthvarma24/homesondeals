@@ -9,6 +9,7 @@ import Partners from "@/components/partners"
 import { TestimonialSection } from "@/components/testimonial-section"
 import Faq from "@/components/faq"
 import Footer from"@/components/footer"
+import PostProperty from"@/app/post-property/page"
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <TestimonialSection/>
       <Faq/>
       <Footer/>
+      <PostProperty/>
     </main>
   );
 }
